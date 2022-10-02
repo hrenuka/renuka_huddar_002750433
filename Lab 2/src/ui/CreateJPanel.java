@@ -343,7 +343,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         int showOpenDialogue = uploadImageFile.showOpenDialog(null);
 
         if (showOpenDialogue == JFileChooser.APPROVE_OPTION) {
-            File selectedImageFile = browseImageFile.getSelectedFile();
+            File selectedImageFile = uploadImageFile.getSelectedFile();
             String selectedImagePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImagePath);
 
@@ -352,7 +352,8 @@ public class CreateJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnUploadImageActionPerformed
 
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSave;
