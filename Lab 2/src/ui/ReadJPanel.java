@@ -81,7 +81,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         btnBrowse = new javax.swing.JButton();
         lblImage = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        txtLevel1 = new javax.swing.JTextField();
+        txtStartDate = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 204, 170));
 
@@ -252,7 +252,7 @@ public class ReadJPanel extends javax.swing.JPanel {
             }
         });
 
-        txtLevel1.setBackground(new java.awt.Color(204, 255, 204));
+        txtStartDate.setBackground(new java.awt.Color(204, 255, 204));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -301,7 +301,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                             .addComponent(txtGender)
                             .addComponent(txtLevel)
                             .addComponent(txtTeamInfo)
-                            .addComponent(txtLevel1))))
+                            .addComponent(txtStartDate))))
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -367,7 +367,7 @@ public class ReadJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblStartDate)
-                            .addComponent(txtLevel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -583,11 +583,11 @@ public class ReadJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtEmpID;
     private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtLevel;
-    private javax.swing.JTextField txtLevel1;
     private javax.swing.JTextField txtName;
     private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtPosition;
     private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtStartDate;
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
 
