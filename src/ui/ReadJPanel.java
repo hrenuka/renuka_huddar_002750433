@@ -76,7 +76,6 @@ public class ReadJPanel extends javax.swing.JPanel {
         lblLevel = new javax.swing.JLabel();
         txtName = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
         btnBrowse = new javax.swing.JButton();
         lblImage = new javax.swing.JLabel();
@@ -94,18 +93,18 @@ public class ReadJPanel extends javax.swing.JPanel {
         tblRead.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 204)));
         tblRead.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+                {null},
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Emp ID", "Name"
+                "Emp ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -207,14 +206,6 @@ public class ReadJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnSave.setBackground(new java.awt.Color(153, 255, 255));
-        btnSave.setText("Save ");
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
-
         txtSearch.setBackground(new java.awt.Color(153, 204, 255));
         txtSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtSearch.setCaretColor(new java.awt.Color(0, 255, 204));
@@ -304,26 +295,20 @@ public class ReadJPanel extends javax.swing.JPanel {
                             .addComponent(txtStartDate))))
                 .addGap(31, 31, 31))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(478, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
-                        .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnSave)
-                                .addGap(39, 39, 39))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36))))
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 281, Short.MAX_VALUE)
                         .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(218, 218, 218))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(251, 251, 251)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnDelete, btnRead});
@@ -387,14 +372,12 @@ public class ReadJPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblEmailID))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnSave))
+                            .addComponent(lblEmailID)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblImage, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBrowse)))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnDelete, btnRead});
@@ -420,7 +403,16 @@ public class ReadJPanel extends javax.swing.JPanel {
      
      populateTable();
      
-        
+        txtName.setText("");
+         txtEmpID.setText("");
+         txtAge.setText("");
+         txtGender.setText("");
+         txtStartDate.setText("");        
+         txtLevel.setText("");
+         txtTeamInfo.setText("");
+         txtPosition.setText("");
+         txtPhone.setText("");
+         txtEmail.setText("");
         
         
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -430,7 +422,7 @@ public class ReadJPanel extends javax.swing.JPanel {
         int selectedRowIndex = tblRead.getSelectedRow();
        
        if(selectedRowIndex<0){
-           JOptionPane.showMessageDialog(this, "Please select a row to Delete.");
+           JOptionPane.showMessageDialog(this, "Please select a row to View.");
            return;
        }
        DefaultTableModel model = (DefaultTableModel) tblRead.getModel(); 
@@ -449,48 +441,6 @@ public class ReadJPanel extends javax.swing.JPanel {
         txtEmail.setText(selectedEmployees.getEmail());
         
     }//GEN-LAST:event_btnReadActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
-        
-         
-         
-         
-         JOptionPane.showMessageDialog(this,"Employee Details Updated.");
-        /* updatedEmployee e1;
-         e1 = new 
-         Object[] table = new Object[3]; 
-            table[0] = e1;
-            table[1] = e1.getEmpID();
-            table[2] = e1.getName();
-            
-            model.addRow(table);
-         */
-         
-         
-         txtName.setText("");
-         txtEmpID.setText("");
-         txtAge.setText("");
-         txtGender.setText("");
-         txtStartDate.setText("");        
-         txtLevel.setText("");
-         txtTeamInfo.setText("");
-         txtPosition.setText("");
-         txtPhone.setText("");
-         txtEmail.setText("");
-         
-    /*     
-         String Name = txtName.getText();
-         String EmpID = txtEmpID.getText();
-         String Age= txtAge.getText();
-         String Gender= txtGender.getText();
-         String StartDate= txtStartDate.getText();
-         String level= txtLevel.getText();
-         String TeamInfo= txtTeamInfo.getText();
-         String PositionTitle= txtPosition.getText();
-         String Phone= txtPhone.getText();
-         String Email= txtEmail.getText(); */
-    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void tblReadMouseWheelMoved(java.awt.event.MouseWheelEvent evt) {//GEN-FIRST:event_tblReadMouseWheelMoved
         // TODO add your handling code here:
@@ -560,7 +510,6 @@ public class ReadJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBrowse;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnRead;
-    private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
@@ -602,28 +551,22 @@ public class ReadJPanel extends javax.swing.JPanel {
                     
             Object[] row = new Object[2]; 
             row[0] = e;
-            row[0] = e.getEmpID();
-            row[1] = e.getName();
+            row[1] = e.getEmpID();
+            
             
             
             model.addRow(row);
 
         }
     }
-    public class MyInputVerifier extends InputVerifier {
-    @Override
-    public boolean verify(JComponent input) {
-        String text = ((JTextField) input).getText();
-        try {
-            BigDecimal value = new BigDecimal(text);
-            return (value.scale() <= Math.abs(4)); 
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-}
     
     }
+    
+    
+    
+
+    
+    
 
     
     

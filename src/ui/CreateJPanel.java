@@ -176,7 +176,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addComponent(lblLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtLevel, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 327, Short.MAX_VALUE)
                         .addComponent(btnUploadImage)
                         .addGap(87, 87, 87))
                     .addGroup(layout.createSequentialGroup()
@@ -276,13 +276,13 @@ public class CreateJPanel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblEmailID)
                             .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 172, Short.MAX_VALUE))
+                        .addGap(0, 167, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSave)
                             .addComponent(btnExit))))
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtAge, txtEmail, txtEmpID, txtGender, txtLevel, txtName, txtPhone, txtPosition, txtStartDate, txtTeamInfo});
@@ -292,6 +292,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
         
+     
      
          String Name = txtName.getText();
          String EmpID = txtEmpID.getText();
@@ -303,9 +304,18 @@ public class CreateJPanel extends javax.swing.JPanel {
          String PositionTitle= txtPosition.getText();
          String Phone= txtPhone.getText();
          String Email= txtEmail.getText();
+         
+         if (txtName.equals("") || txtEmpID.equals("") || txtAge.equals("") || txtGender.equals("")|| txtStartDate.equals("") || txtLevel.equals("") || txtTeamInfo.equals("") || txtPosition.equals("")|| txtPhone.equals("") || txtEmail.equals(""))
+         
+         {
+                JOptionPane.showMessageDialog(this,"Add Valid info.");
+         }
+         else 
+                 
+                {
 
          Employee e = product.addNewEmployee();
-         
+
          e.setName(Name);
          e.setEmpID(EmpID);
          e.setAge(Age);
@@ -330,7 +340,7 @@ public class CreateJPanel extends javax.swing.JPanel {
          txtPosition.setText("");
          txtPhone.setText("");
          txtEmail.setText("");
-         
+        }
          
     }//GEN-LAST:event_btnSaveActionPerformed
 
